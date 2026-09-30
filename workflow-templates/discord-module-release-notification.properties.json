@@ -1,0 +1,7 @@
+{
+  "name": "Discord module release notification",
+  "description": "Posts to a Discord channel when a module gets a new version after a merge. Needs the Semantic versioning workflow.",
+  "iconName": "octicon megaphone",
+  "categories": ["Automation"],
+  "filePatterns": ["\\.tf$"]
+}

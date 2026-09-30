@@ -1,0 +1,23 @@
+name: Discord module release notification
+
+# Posts to Discord when a module gets a new version after a merge to the default branch. It runs when
+# the "Semantic versioning" workflow finishes, so that workflow must be in this repository and keep
+# that name. Needs a secret named DISCORD_RELEASE_WEBHOOK_URL, which can be an organization secret.
+on:
+  workflow_run:
+    workflows: [Semantic versioning]
+    types: [completed]
+    branches: [$default-branch]
+
+permissions: {}
+
+jobs:
+  notify:
+    if: github.event.workflow_run.event == 'push' && github.event.workflow_run.conclusion == 'success'
+    permissions:
+      contents: read
+    uses: Stemweave/shared-workflows/.github/workflows/discord-release-notification.yml@main
+    with:
+      commit_sha: ${{ github.event.workflow_run.head_sha }}
+    secrets:
+      DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_RELEASE_WEBHOOK_URL }}

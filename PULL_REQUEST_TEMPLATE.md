@@ -34,7 +34,7 @@ Text in comments like this one is ignored.
 
 - [ ] Every input and output has a description and a type
 - [ ] Nothing is hardcoded that callers may need to change (names, regions, IDs, SKUs)
-- [ ] Resource names follow the naming convention (tfmod-naming-convention)
+- [ ] Resource names follow the naming convention (tfmod-az-naming-convention)
 - [ ] No secrets, keys, or tokens in code, examples, or tests
 - [ ] Terraform and provider version constraints are set and still correct
 - [ ] README and examples are up to date

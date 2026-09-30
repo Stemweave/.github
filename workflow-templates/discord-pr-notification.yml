@@ -1,0 +1,16 @@
+name: Discord PR notification
+
+# Posts to Discord when a pull request is opened, reopened, ready for review, merged, or closed.
+# Needs a secret named DISCORD_PR_WEBHOOK_URL, which can be an organization secret.
+on:
+  pull_request:
+    types: [opened, reopened, ready_for_review, closed]
+
+permissions: {}
+
+jobs:
+  notify:
+    permissions: {}
+    uses: Stemweave/shared-workflows/.github/workflows/discord-pr-notification.yml@main
+    secrets:
+      DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_PR_WEBHOOK_URL }}

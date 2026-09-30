@@ -1,0 +1,6 @@
+{
+  "name": "Discord PR notification",
+  "description": "Posts to a Discord channel when a pull request is opened, ready for review, merged, or closed.",
+  "iconName": "octicon comment-discussion",
+  "categories": ["Automation"]
+}
