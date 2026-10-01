@@ -1,0 +1,7 @@
+{
+  "name": "Terraform on HCP Terraform",
+  "description": "Plans on every pull request, applies on merge, and lets you run plan, apply or destroy by hand. State stays in HCP Terraform.",
+  "iconName": "octicon git-pull-request",
+  "categories": ["Automation"],
+  "filePatterns": ["\\.tf$"]
+}
